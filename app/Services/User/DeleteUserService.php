@@ -1,20 +1,16 @@
 <?php
 
 namespace App\Services\User;
-
 use App\Repositories\UserRepository;
 use Ky\Core\Services\BaseService;
-use Ky\Core\Criteria\FilterCriteria;
-use Ky\Core\Criteria\OrderCriteria;
-use Ky\Core\Criteria\WithRelationsCriteria;
 
-class ListUserService extends BaseService
+class DeleteUserService extends BaseService
 {
     protected $collectsData = true;
-
+    /**
+     * @var UserRepository
+     */
     protected $repository;
-
-    protected $with = null;
 
     public function __construct(UserRepository $repository)
     {
@@ -26,6 +22,6 @@ class ListUserService extends BaseService
      */
     public function handle()
     {
-        return $this->repository->all();
+        return $this->model->delete();
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\User;
 
-use App\Http\Requests\BaseRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
-class ListUserRequest extends BaseRequest
+class DeleteUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class ListUserRequest extends BaseRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,6 +23,8 @@ class ListUserRequest extends BaseRequest
      */
     public function rules()
     {
-        return [];
+        return [
+            //
+        ];
     }
 }

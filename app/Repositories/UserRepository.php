@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Ky\Core\Repositories\BaseRepository;
+use App\Models\User;
 
 class UserRepository extends BaseRepository
 {
@@ -13,6 +14,6 @@ class UserRepository extends BaseRepository
      */
     public function getModel()
     {
-        return ;
+        return User::class;
     }
 }

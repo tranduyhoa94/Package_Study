@@ -10,7 +10,7 @@ abstract class BaseService
      * @var boolean
      */
     protected $collectsData = false;
-    
+
     protected $repository;
 
     /**

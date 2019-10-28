@@ -4,7 +4,7 @@ namespace App\Http\Requests\User;
 
 use App\Http\Requests\BaseRequest;
 
-class ListUserRequest extends BaseRequest
+class UpdateUserRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,6 +23,19 @@ class ListUserRequest extends BaseRequest
      */
     public function rules()
     {
-        return [];
+        return [
+            'name' => [
+                'sometimes',
+                'string'
+            ],
+            'email' => [
+                'required',
+                'email',
+            ],
+            'password' => [
+                'required',
+                'string'
+            ]
+        ];
     }
 }
