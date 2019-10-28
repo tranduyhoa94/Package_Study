@@ -122,7 +122,17 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, int $id)
     {
-        //
+        $user = $this->findService
+            ->setRequest($request)
+            ->setModel($id)
+            ->handle();
+
+        $user = $this->updateService
+            ->setRequest($request)
+            ->setModel($user)
+            ->handle();
+
+        return response()->json(new UserResource($user));
     }
 
     /**
