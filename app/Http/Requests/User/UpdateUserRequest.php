@@ -30,8 +30,7 @@ class UpdateUserRequest extends BaseRequest
             ],
             'email' => [
                 'required',
-                'email',
-                'unique:users'
+                'email'
             ],
             'password' => [
                 'required',

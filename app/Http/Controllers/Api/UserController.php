@@ -141,8 +141,30 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DeleteUserRequest $request, int $id)
     {
-        //
+        $user = $this->findService
+            ->setRequest($request)
+            ->setModel($id)
+            ->handle();
+
+        $this->deleteService
+            ->setRequest($request)
+            ->setModel($user)
+            ->handle();
+
+        return response()->json([
+            'success' => 'true',
+            'message' => 'Delete user success!!'
+        ]);
+    }
+
+    public function searchUser(FindUserRequest $request)
+    {
+        $user = $this->findService
+            ->setRequest($request)
+            ->handle();
+
+        dd($user);
     }
 }

@@ -16,4 +16,16 @@ class UserRepository extends BaseRepository
     {
         return User::class;
     }
+
+    /**
+     * Get allow relations
+     *
+     * @return array
+     */
+    public function getAllowRelations()
+    {
+        return [
+            'posts'
+        ];
+    }
 }

@@ -14,4 +14,5 @@ use Illuminate\Http\Request;
 */
 Route::group(['namespace' => 'Api'], function () {
     Route::resource('users', 'UserController');
+    Route::post('search', 'UserController@searchUser');
 });
